@@ -1,12 +1,9 @@
-
 import requests
-
-import os
 import telebot
 import kucoinbot
 import coinmarket_bot
-
-tkn = os.environ['tgtoken']
+import config
+tkn = config.tkn
 bot = telebot.TeleBot(tkn)
 
 
@@ -41,4 +38,4 @@ def text_command(message):
 
   
 
-bot.polling(none_stop=True, interval=0)
+bot.infinity_polling(timeout=10, long_polling_timeout = 5)

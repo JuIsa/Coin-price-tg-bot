@@ -1,11 +1,12 @@
 import json
+import config
 from requests import Request, Session
 
 def check(msg):
   url =   "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
   headers  = {
     'Accepts' : 'application/json',
-    'X-CMC_PRO_API_KEY': '8cf6c0ff-38a0-4df6-94c1-699feb443ea2'
+    'X-CMC_PRO_API_KEY': config.coinapi 
   }
   
   session = Session()
